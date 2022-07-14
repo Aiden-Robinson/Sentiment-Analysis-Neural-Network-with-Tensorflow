@@ -15,7 +15,10 @@ For both the data that the model was trained on and our individual review, there
 - `word_index["<PAD>"]= 0` is an integer to fill extra space in the review to meet a certain length requirement 
 - `word_index["<START>"]=1` is an integer put at the start of every review to indicate that it is the start
 - `word_index["<UNK>"]=2` is an integer used for unknown words (words not within the dictionary)
+- `word_index["<UNUSED>"]` is used for unknown words
 
 
+<img width= "500" height= "450" src= "https://user-images.githubusercontent.com/106715980/178895195-3f9081a1-9df7-4d1c-abc6-085c6fe58b00.png">
+for example,this is how the review I wrote looks when it is encoded:
 
 ## Model architecture
