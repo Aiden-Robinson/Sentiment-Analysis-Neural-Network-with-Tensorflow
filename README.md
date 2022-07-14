@@ -32,5 +32,7 @@ for example,this is how the review I wrote looks when it is encoded:
 - `Purple` shows that the rest of the review is padded to meet the 250 word structure
 
 ## Model architecture
-sdfksdhfds
-- test 
+The model is a 3 layered sequential network created with keras
+- `model.add(keras.layers.Embedding(88000, 16))` is the embedding layer that creates 88000 word vectors with 16 dimensions. 
+![Vector differences](https://user-images.githubusercontent.com/106715980/179017708-61ec6d5f-1579-42a6-831f-5747df34fa0a.png)
+- Similair words will have a smaller angle between them in the vector space while unrelated words will have a greater angle
