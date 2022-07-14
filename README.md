@@ -20,11 +20,14 @@ For both the data that the model was trained on and our individual review, there
 
 <img width= "500" height= "450" src= "https://user-images.githubusercontent.com/106715980/178895195-3f9081a1-9df7-4d1c-abc6-085c6fe58b00.png">
 for example,this is how the review I wrote looks when it is encoded:
+
+
 - `Green` shows how 1 is used at the start of any encoded text
--`Blue` shows the use of "Avengers" and "Endgame" and how they are uncommon in the vocablary so their integer is large
--`Orange` shows the use of 4="the" and 6="a" which are very common words, hence low integers ( 0-3 are custom so 4/the is actually the most used word)
--`Red` shows the singalling of an unknow word which is "MCU" in our review. Thus, it was so uncommon in training its not in the dictionary
--`Purple` shows that the rest of the review is padded to meet the 250 word structure
-- yo 
+- `Blue` shows the use of "Avengers" and "Endgame" and how they are uncommon in the vocablary so their integer is large
+- `Orange` shows the use of 4="the" and 6="a" which are very common words, hence low integers ( 0-3 are custom so 4/the is actually the most used word)
+- `Red` shows the singalling of an unknow word which is "MCU" in our review. Thus, it was so uncommon in training its not in the dictionary
+- `Purple` shows that the rest of the review is padded to meet the 250 word structure
 
 ## Model architecture
+sdfksdhfds
+- test 
