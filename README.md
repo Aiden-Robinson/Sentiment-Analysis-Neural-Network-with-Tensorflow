@@ -33,10 +33,10 @@ for example,this is how the review I wrote looks when it is encoded:
 
 ## Model architecture
 ![network image](https://user-images.githubusercontent.com/106715980/179132027-0b3d2960-b66a-479f-a85e-9ba6e009e7a3.png)
-- The input is a sequence of encoded words from the review. Then we pass it to the embedding layer.
+- The input is a sequence of encoded words from the review. Then we pass it to the embedding layer
 - The embedding layer are the words represented as vectors and helps us group similair words together to help extract meaning from the reviews
-- The next layer takes these vectors and averages them out; shrinking their data down. 
-- The dense layer has 16 neurons, it looks for patterns of words and tries to classify them into either positive or negative reviews. It does this by modifying weights and biases on each connection.
+- The next layer takes these vectors and averages them out; shrinking their data down 
+- The dense layer has 16 neurons, it looks for patterns of words and tries to classify them into either positive or negative reviews. It does this by modifying weights and biases on each connection
 - The output layer gives a value between 0 and 1. The cloer to 1 the more positive the review is. An accuracy is also included
 
 The model is a 3 layered sequential network created with keras
