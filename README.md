@@ -11,7 +11,7 @@ Tensorflow trained neural network to determine whether movie reviews are positiv
 ## The Data
 The data we use was imported from Tensorflows's website for this tutorial. They are real reviews from IMDb's webste. 25000 polar movie reviews are for testing data, 25000 are for training data. There is also unlabeled data for use as well.
 
-## Training the model
+
 
 ## Preprocessing the Data
 For both the data that the model was trained on and our individual review, there requires preprocessing on the .txt files inro a readable format for the model. To start, I standardized the length of each review to 250 words to keep it consistent. When training the model, I set the vocabulary size to 88000 meaning it only recognizes the 88000 most common words that appear in the training data and any uncommon word that might only come up once or twice is marked as unknown so it doesn't throw the model off. .The words and integers are placed in a dictionary called `word_index`, but I added 3 of my own keys first:
@@ -31,7 +31,7 @@ for example,this is how the review I wrote looks when it is encoded:
 - `Red` shows the singalling of an unknow word which is "MCU" in our review. Thus, it was so uncommon in training its not in the dictionary
 - `Purple` shows that the rest of the review is padded to meet the 250 word structure
 
-## Model architecture
+## Model Architecture
 ![network image](https://user-images.githubusercontent.com/106715980/179132027-0b3d2960-b66a-479f-a85e-9ba6e009e7a3.png)
 - The input is a sequence of encoded words from the review. Then we pass it to the embedding layer
 - The embedding layer are the words represented as vectors and helps us group similair words together to help extract meaning from the reviews
@@ -47,3 +47,17 @@ The model is a 3 layered sequential network created with keras
 `model.add(keras.layers.GlobalAveragePooling1D())` essentially flattens our 16 dimensions into a lower dimensions
 `model.add(keras.layers.Dense(16, activation="relu"))` is the dense layer and used rectified linear unit as the activation function
 `model.add(keras.layers.Dense(1, activation="sigmoid"))` is our output layer and uses a sigmoid function because our output must be between 0 and 1
+`model.compile(optimizer= "adam", loss= "binary_crossentropy",metrics= ["accuracy"])` compiles the model. binary_crossentropy was chosen because there are 2 options for the output neuron (0 or 1)
+
+## Training the Model
+ `x_val= train_data[:10000]`
+`x_train= train_data[10000:]`
+`y_val= train_labels[:10000]`
+`y_train= train_labels[10000:]`
+
+Here I am splitting up the data into validation data and training data. Validation data checks how well the model performs on new data.
+
+`fitModel= model.fit(x_train, y_train, epochs= 40, batch_size=512, validation_data= (x_val, y_val), verbose=1)` This trains the model. 512 reviews are read in at once and this proess is repeated 40 times (epochs).
+## Saving the Model
+Training the model with 40 epochs took about 45 seconds with my personal computer specs, but this can be avoided in the future by saving the model
+`model.save("model.h5")`
