@@ -32,7 +32,18 @@ for example,this is how the review I wrote looks when it is encoded:
 - `Purple` shows that the rest of the review is padded to meet the 250 word structure
 
 ## Model architecture
+![network image](https://user-images.githubusercontent.com/106715980/179132027-0b3d2960-b66a-479f-a85e-9ba6e009e7a3.png)
+- The input is a sequence of encoded words from the review. Then we pass it to the embedding layer.
+- The embedding layer are the words represented as vectors and helps us group similair words together to help extract meaning from the reviews
+- The next layer takes these vectors and averages them out; shrinking their data down. 
+- The dense layer has 16 neurons, it looks for patterns of words and tries to classify them into either positive or negative reviews. It does this by modifying weights and biases on each connection.
+- The output layer gives a value between 0 and 1. The cloer to 1 the more positive the review is. An accuracy is also included
+
 The model is a 3 layered sequential network created with keras
 - `model.add(keras.layers.Embedding(88000, 16))` is the embedding layer that creates 88000 word vectors with 16 dimensions. 
 ![Vector differences](https://user-images.githubusercontent.com/106715980/179017708-61ec6d5f-1579-42a6-831f-5747df34fa0a.png)
-- Similair words will have a smaller angle between them in the vector space while unrelated words will have a greater angle
+- For reference, similair words will have a smaller angle between them in the vector space while unrelated words will have a greater angle
+
+`model.add(keras.layers.GlobalAveragePooling1D())` essentially flattens our 16 dimensions into a lower dimensions
+`model.add(keras.layers.Dense(16, activation="relu"))` is the dense layer and used rectified linear unit as the activation function
+`model.add(keras.layers.Dense(1, activation="sigmoid"))` is our output layer and uses a sigmoid function because our output must be between 0 and 1
