@@ -1,6 +1,8 @@
 # Text-Classfication-Neural-Network
 Tensorflow trained neural network to determine whether movie reviews are positive or negative. 
 
+Skills: 
+
 ### My personal review for a movie as a text file
 ![MovieReview](https://user-images.githubusercontent.com/106715980/178888250-c5028fde-603a-4589-846c-c9826f707fe7.png)
 [MyReview.txt](https://github.com/Aiden-Robinson/Text-Classfication-Neural-Network/files/9108176/MyReview.txt)
