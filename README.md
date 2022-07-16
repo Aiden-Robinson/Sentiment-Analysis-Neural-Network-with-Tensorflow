@@ -47,8 +47,11 @@ The model is a 3 layered sequential network created with keras
 - For reference, similair words will have a smaller angle between them in the vector space while unrelated words will have a greater angle
 
 `model.add(keras.layers.GlobalAveragePooling1D())` essentially flattens our 16 dimensions into a lower dimensions
+
 `model.add(keras.layers.Dense(16, activation="relu"))` is the dense layer and used rectified linear unit as the activation function
+
 `model.add(keras.layers.Dense(1, activation="sigmoid"))` is our output layer and uses a sigmoid function because our output must be between 0 and 1
+
 `model.compile(optimizer= "adam", loss= "binary_crossentropy",metrics= ["accuracy"])` compiles the model. binary_crossentropy was chosen because there are 2 options for the output neuron (0 or 1)
 
 ## Training the Model
