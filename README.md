@@ -1,4 +1,4 @@
-# Text-Classfication-Neural-Network
+# Sentiment-Analysis-Neural-Network
 Tensorflow trained neural network to determine whether movie reviews are positive or negative. 
 
 `Skills:` Tensorflow, Python
